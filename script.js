@@ -11,16 +11,15 @@ const arrGroups = [
                   'Fm2008-23',
                   'FM2022-1',
                   'FD2022-5',
-                  'FD2022-5',
-                  'FD2022-5',
-                  'FD2022-5',
-                  'FD2022-5',
-                  'FD2022-5',
-                  'FD2022-5',
-                  'FD2022-5',
+                  'hsFD2022-5',
+                  'FD2022-5gfggh',
+                  'F2022-5',
+                  'FM2022-5',
+                  'FE2022-5',
+                  'FD2025-5',
+                  'FD2023-5',
 ];
-// const groupChek = /(\W|^)(FD|FM|FE|fd|fm|fe)(20)\d\d(-\d+)?/g;
-const groupChek = /^(F[DME]|f[dme])20\d\d(-\d+)?$/g;
+const groupChek = /^(F[DME]|f[dme])20\d\d(-\d+)?$/;
 
 function validationGroups () {
   for (let i = 0; i < arrGroups.length; i++) {
@@ -34,3 +33,18 @@ function validationGroups () {
 }
 
 validationGroups ();
+console.log(' ====== Second variant use SEARCH() ====== ')
+
+function check(str) {
+  let midString;
+  if (str.search(groupChek) != -1) {
+    midString = 'Success'
+  } else {
+    midString = 'Error'
+  }
+  console.log(str + ' - ' + midString);
+}
+
+for (let value of arrGroups) {
+  check(value);
+}
